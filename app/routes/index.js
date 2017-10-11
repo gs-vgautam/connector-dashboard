@@ -10,16 +10,16 @@ function routes (app) {
     });
 
     router.get('/', function (req, res) {
-        res.send("Hello, Welcome to Connector Dashboard\n");
+        res.render('index', {data : "Hello, Welcome to Connector Dashboard" });
     });
 
     router.get('/s3/:key', function (req, res) {
         var callback = function (err, data) {
             if (err) {
                 console.error(err);
-                res.send("Unable to find");
+                res.render('index', { data : "Unable to find" });
             }
-            res.send(data);
+            res.render('index', { data : JSON.stringify(data)});
         }
 
         require('../utils/aws-s3')(req.params.key, callback);

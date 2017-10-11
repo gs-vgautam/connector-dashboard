@@ -25,7 +25,7 @@ function countOfObjects(key, callback) {
     var params = {
         Bucket : bucket,
         Delimiter: '/',
-        Prefix : 'UC/' + key + '/'
+        Prefix : 'UC/' + key
     };
 
     s3.listObjects(params, callback);
