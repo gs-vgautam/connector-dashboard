@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+require('../config').boot(process.env);
 var http = require('http');
 
 var app = require('../app')(process.env);

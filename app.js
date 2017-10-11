@@ -6,7 +6,7 @@ function setup (environment) {
     var app = express();
 
     // configure routes
-    require('./app/routes/index')(app);
+    require('./app/routes')(app);
 
     return app;
 }

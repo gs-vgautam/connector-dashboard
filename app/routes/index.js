@@ -13,6 +13,19 @@ function routes (app) {
         res.send("Hello, Welcome to Connector Dashboard\n");
     });
 
+    router.get('/s3/:key', function (req, res) {
+        var callback = function (err, data) {
+            if (err) {
+                console.error(err);
+                res.send("Unable to find");
+            }
+            res.send(data);
+        }
+
+        require('../utils/aws-s3')(req.params.key, callback);
+
+    });
+
     // configure routes on middleware
     app.use("/", router);
 }

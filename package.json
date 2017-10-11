@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/gs-vgautam/connector-dashboard#readme",
   "dependencies": {
-    "express": "latest"
+    "express": "4.16.2",
+    "aws-sdk": "2.131.0",
+    "lodash": "4.17.4"
   }
 }
