@@ -19,6 +19,8 @@
   "homepage": "https://github.com/gs-vgautam/connector-dashboard#readme",
   "dependencies": {
     "express": "4.16.2",
+    "properties-reader" : "0.0.16",
+    "mongodb": "2.2.31",
     "aws-sdk": "2.131.0",
     "lodash": "4.17.4"
   }
