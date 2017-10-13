@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gs-vgautam/connector-dashboard#readme",
   "dependencies": {
+    "amqp-stats": "0.0.14",
     "aws-sdk": "2.131.0",
     "ejs": "2.5.7",
     "express": "4.16.2",

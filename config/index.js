@@ -9,7 +9,6 @@ function boot(env) {
     config.env = env.APP_ENV || 'DEV';
 
 
-
     // AWS S3
     // config.AWS_ACCESS_KEY_ID=process.env.AWS_S3_BUCKET;
     // config.AWS_SECRET_ACCESS_KEY=process.env.AWS_S3_BUCKET;
@@ -35,6 +34,15 @@ function boot(env) {
         db   : properties.get('mongo.global.db'),
         pass : properties.get('mongo.global.password'),
         ssl  : properties.get('mongo.global.ssl.enable')
+    };
+
+    // RabbitMQ
+    config.rabbitmq = {
+        host : properties.get('rabbitmq.dev.host'),
+        user : properties.get('rabbitmq.dev.username'),
+        pass : properties.get('rabbitmq.dev.password'),
+        proto: properties.get('rabbitmq.dev.protocol'),
+        vhost: properties.get('rabbitmq.dev.vhost')
     };
 
 }

@@ -7,22 +7,19 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div>
+    <body>
     <div>
-        <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-            </ul>
-        </nav>
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px; margin-bottom: 0px">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <h3 style="margin-left: 10px; margin-top: 0px"><strong>Your api response</strong></h3>
+            <pre style="margin-left: 5px; margin-right: 5px; border-color: #8fbc8f;"><%= data %></pre>
+        </div>
     </div>
-    <br/>
-    <div class="jumbotron">
-        <h3><strong>Your api response</strong></h3>
-        <p>
-            <%= data %>
-        </p>
-    </div>
-</div>
-</body>
+    </body>
 </html>

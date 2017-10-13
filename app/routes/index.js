@@ -19,11 +19,19 @@ function routes (app) {
                 console.error(err);
                 res.render('index', { data : "Unable to find" });
             }
-            res.render('index', { data : JSON.stringify(data)});
+            res.render('index', { data : JSON.stringify(data, null, 4)});
         }
 
         require('../utils/aws-s3')(req.params.key, callback);
 
+    });
+
+    router.get('/amqp', function (req, res) {
+        require('../utils/rabbitmq').queues(function (err, res1, data) {
+           if (err)
+               res.render('index', { data : "No stats fetched" });
+           res.render('index', { data : JSON.stringify(data, null, 4) });
+        });
     });
 
     // configure routes on middleware
