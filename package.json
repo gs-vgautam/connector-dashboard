@@ -21,8 +21,10 @@
     "aws-sdk": "2.131.0",
     "ejs": "2.5.7",
     "express": "4.16.2",
+    "express-promise-router": "^2.0.0",
     "lodash": "4.17.4",
-    "mongodb": "^2.2.31",
+    "mongodb": "2.2.31",
+    "pg": "^7.3.0",
     "properties-reader": "0.0.16"
   }
 }

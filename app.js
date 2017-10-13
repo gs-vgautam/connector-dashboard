@@ -10,6 +10,7 @@ function setup (environment) {
 
     // configure routes
     require('./app/routes')(app);
+    require('./app/routes/pgrouter')(app);
 
     return app;
 }
