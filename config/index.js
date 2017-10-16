@@ -13,8 +13,8 @@ function boot(env) {
     // config.AWS_ACCESS_KEY_ID=process.env.AWS_S3_BUCKET;
     // config.AWS_SECRET_ACCESS_KEY=process.env.AWS_S3_BUCKET;
     config.aws_s3 = {
-        region : process.env.AWS_S3_REGION,
-        bucket : process.env.AWS_S3_BUCKET,
+        region : properties.get('AWS_S3_REGION'),
+        bucket : properties.get('AWS_S3_BUCKET'),
     };
 
     // PostgreSQL

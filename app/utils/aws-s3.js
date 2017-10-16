@@ -12,16 +12,17 @@ AWS.config.update({
 
 var s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
-function countOfObjects(key, callback) {
+// function countOfObjects(key, callback) {
+//
+//     var params = {
+//         Bucket : bucket,
+//         Delimiter: '/',
+//         Prefix : 'UC/' + key
+//     };
+//
+//     s3.listObjects(params, callback);
+//
+// }
 
-    var params = {
-        Bucket : bucket,
-        Delimiter: '/',
-        Prefix : 'UC/' + key
-    };
-
-    s3.listObjects(params, callback);
-
-}
-
-module.exports = countOfObjects;
+module.exports = s3;
+module.exports.bucket = bucket;
