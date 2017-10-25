@@ -16,7 +16,11 @@ var endpoints = urltree({
     'snsByTenantId' : '/sns/:tenantId',
 
     // rabbitmq
-    'stats' : '/amqp'
+    'stats' : '/amqp',
+
+    // mongodb
+    'connectionrepo' : '/connections',
+    'jobinfo' : '/jobs'
 
 
 });

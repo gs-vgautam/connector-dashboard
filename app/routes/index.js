@@ -21,6 +21,10 @@ function routes (app) {
 
     router.get(urls.stats, controllers.queues.allQueueStats);
 
+    router.get(urls.connectionrepo, controllers.mongo.allConnections);
+
+    router.get(urls.jobinfo, controllers.mongo.allJobs);
+
 
     // configure routes on middleware
     app.use("/", router);

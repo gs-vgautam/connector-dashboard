@@ -1,20 +1,23 @@
 'use strict';
 
 var config = require('../../config');
-
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-
+var mongoClient = require('mongodb').MongoClient;
 var params = 'mongodb://'+ config.mongodb.user + ':' + config.mongodb.pass + '@' + config.mongodb.host + ':' + config.mongodb.port + '/' + config.mongodb.db + '?connectTimeoutMS=1000';
+var db = null;
 
-MongoClient.connect(params, function(err, db) {
-    assert.equal(null, err);
-    db.collection('connectionrepo').find({'deleted': false}).toArray(myAllConnetcions);
-    db.close();
-});
+module.exports = function (callback) {
+    if (db) {
+        callback(db);
+        return;
+    }
 
-
-var myAllConnetcions = function(err, connections) {
-        assert.equal(null, err);
-        console.log(connections);
-    };
+    mongoClient.connect(params, function (err, connection) {
+        if (err) {
+            console.error(err.message);
+            throw new Error(err);
+        } else {
+            db = connection;
+            callback(db);
+        }
+    })
+};

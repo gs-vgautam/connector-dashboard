@@ -3,5 +3,6 @@
 module.exports = {
     postgres : require('./postgres'),
     rabbitmq : require('./rabbitmq'),
-    s3 : require('./aws-s3')
+    s3 : require('./aws-s3'),
+    mongodb : require('./mongodb')
 };
